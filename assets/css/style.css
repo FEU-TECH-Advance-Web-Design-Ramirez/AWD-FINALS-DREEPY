@@ -1,0 +1,110 @@
+body{
+    background-color: lightpink;
+    margin: 0;
+}
+
+header{
+    display: flex;
+    background-color: rgba(245, 245, 245, 0.347);
+    height: 12vh;
+    box-shadow: 1px 1px 15px rgba(177, 171, 171, 0.56);    
+    justify-content: space-between;
+    border-radius: 0px 0px 10px 10px;
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+    position: fixed;
+
+    & > h2{
+        font-weight: 900;
+        margin-left: 2rem;
+    }
+    
+    & > nav{
+        display: flex;
+        margin-right: 2rem;
+
+        & a > button{
+            
+            height: 2rem;
+            width: 8rem;
+            border-radius: 10px;
+        }
+    }
+}
+
+header.scrolled{
+    background-color: lightblue;
+    height: 5rem;
+    box-shadow: 1px 1px 15px rgba(177, 171, 171, 0.56); 
+
+}
+.section1{
+    height: 100vh;
+}
+.section2{
+    display: flex;
+    padding-top: 12vh;
+    height: 100vh;
+
+    & > .container-holder{
+    display: flex;
+    height: 88vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+
+    & > .container{
+        display: flex;
+        flex-direction: column;
+        height: 22rem;
+        width: 17rem;
+        background-color: white;
+    }
+    }
+
+}
+
+@media (max-width: 1024px) {
+    body{
+    }
+    header {
+        & > h2{
+            font-size: 15px;
+            margin-left: 1rem;
+        }
+
+        & > nav {
+            margin-right: 1rem;
+
+        & > a > button{
+            font-size: 10px;
+            width: 6rem;
+        }
+    }
+    }
+    .section2{
+        display: flex;
+        padding-top: 12vh;
+        height: 200vh;
+    
+        & > .container-holder{
+        display: flex;
+        height: 200vh;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        flex-direction: column;
+    
+        & > .container{
+            display: flex;
+            flex-direction: column;
+            height: 22rem;
+            width: 17rem;
+            background-color: white;
+        }
+        }
+    }
+}
