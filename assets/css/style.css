@@ -1071,7 +1071,7 @@ header {
     }
 
     .section1{
-        & > .left-container> .image-holder{
+        & > .left-container > .image-holder{
             height: 80vh;
 
             & > img{
@@ -1080,6 +1080,8 @@ header {
         }
 
         & > .right-container {
+            width: 50%;
+
             & > h1{
 
                 & > span:nth-child(1){
