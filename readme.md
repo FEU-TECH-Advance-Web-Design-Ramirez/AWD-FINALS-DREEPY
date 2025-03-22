@@ -9,18 +9,18 @@
     <img src="./assets/img/nyebe_white.png" alt="Nyebe" width="130" height="100">
   </a>
 <!-- TODO: Change Title to the name of the title of your Project -->
-  <h3 align="center">Title</h3>
+  <h3 align="center">HANGIFY</h3>
 </div>
 <!-- TODO: Make a short description -->
 <div align="center">
-  Short Description. (Optional)
+ Our website is HANGIFY, a platform where users can create and join gatherings with ease. It helps people connect, meet new friends, and plan activities based on their interests. With a simple and interactive design, HANGIFY makes organizing and discovering social opportunities effortless.
 </div>
 
 <br />
 
 <!-- TODO: Change the zyx-0314 into your github username  -->
 <!-- TODO: Change the WD-Template-Project into the same name of your folder -->
-![](https://visit-counter.vercel.app/counter.png?page=zyx-0314/WD-Template-Project)
+![](https://github.com/FEU-TECH-Advance-Web-Design-Ramirez/AWD-FINALS-DREEPY)
 
 [![wakatime](https://wakatime.com/badge/user/018dd99a-4985-4f98-8216-6ca6fe2ce0f8/project/63501637-9a31-42f0-960d-4d0ab47977f8.svg)](https://wakatime.com/badge/user/018dd99a-4985-4f98-8216-6ca6fe2ce0f8/project/63501637-9a31-42f0-960d-4d0ab47977f8)
 
@@ -59,20 +59,41 @@
 
 <!-- TODO: To be changed -->
 <!-- The following are just sample -->
-Description of the project in details.
+
+Our website, HANGIFY, is a platform designed to help people create and join gatherings easily. It has a navigation menu with options like Home, Create, About, and Sign Out, making it simple to explore different sections. Users can create gatherings by adding details such as the event name, date, time, and location. The platform allows users to browse features and learn more about how gatherings work. With a simple and interactive design, HANGIFY makes it easy for people to connect, plan meetups, and enjoy social activities together.
 
 Guiding Question:
 - What is the project
+
+HANGIFY is a website that helps people find and join local events, meet new friends, and create their own gatherings. It allows users to explore different activities and connect with others who share similar interests.
+
 - Whats the purpose
+
+The purpose of HANGIFY is to make it easier for people to socialize by discovering events happening around them. Whether someone is new in town, has a new hobby, or just wants to hang out, this platform helps them find or organize gatherings.
+
 - What are key components
+
+Navigation Menu
+Create Events
+Find Events
+User Reviews
+User Profile
+
 - What technology used and how it is used
+  
+HTML, CSS, JavaScript – Used for designing and structuring the website to make it interactive and user-friendly.
 
 ### Key Components
 <!-- TODO: List of Key Components -->
-<!-- The following are just sample -->
-- MultiPage Website/Single Page Website
-- Parallax transition
-- Transactional
+
+- Navigation Menu : Helps users move around the site. (Home, Create, About, and Sign Out.)
+
+- Create Gatherings : Users can make their own gatherings and set details like date, time, and location.
+
+- Explore Features : Users can browse and interact with different sections of the site.
+
+- Basic User Functions : Users can access and manage their information.
+
 
 ### Technology
 <!-- TODO: List of Technology Used -->
@@ -92,7 +113,7 @@ Guiding Question:
 7. File Structure to follow below.
 
 ```
-WD-ProjectName
+AWD-FINALS-DREEPY
 └─ assets
 |   └─ css
 |   |   └─ style.css
@@ -119,4 +140,6 @@ WD-ProjectName
 <!-- TODO: Add References -->
 | Title | Purpose | Link |
 |-|-|-|
-| Sample Title | Sample purpose would be here like this and this is the example of what it is. | trykolang.com |
+| Font Awesome | For making a design for my buttons | https://fontawesome.com/ |
+| W3schools | For coding idea | https://www.w3schools.com/css/default.asp |
+| Bootstrap | For design & Functionalities | https://getbootstrap.com/ |
