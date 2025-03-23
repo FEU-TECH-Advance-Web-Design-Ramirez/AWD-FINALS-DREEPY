@@ -629,7 +629,7 @@ header {
         justify-content: center;
         align-items: center;
         z-index: 1;
-        
+
         & > .container{
             display: flex;
             justify-content: center;
@@ -693,6 +693,540 @@ header {
                 opacity: 1;
                 box-shadow: rgb(6, 128, 91) 0px 7px 10px, #000 0px 8px 5px;
                 color: rgb(128, 0, 247);
+            }
+        }
+    }
+}
+/* Responsive for smaller screens */
+@media only screen and (max-width: 376px){
+    header{
+        width: 100%;
+        height: 40px;
+
+        & > a > h2 {
+            font-size: 1rem;
+            margin-left: 10px;
+            margin-top: 7px;
+            width: 6.2rem;
+            border-radius: 8px;
+        }
+
+        & > nav {
+            display: flex;
+            width: 80%;
+            height: 100%;
+            gap: 3rem;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            inset: 0;
+            background-color: blueviolet;
+            transform: translateX(125%);    
+            transition: transform 400ms ease;
+
+            & > a > button {
+                display: flex;
+                font-size: 15px;
+            }
+        }
+
+        & > nav.show {
+            transform: translateX(25%);
+        }
+
+        & >  .hamburger {
+            display: block;
+            position: relative;
+            font-size: 15px;
+            margin-right: 6px;
+            color: black;
+            box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.611);
+        }
+    }
+
+    .section1{
+        height: 65vh;
+        width: 100%;
+        flex-direction: column;
+        background-image: url(../img/abstract-shape\ \(4\).png);
+        background-size: cover;
+        background-position: center;
+
+        & > .left-container {
+            display: none;
+        }
+
+        & > .right-container {
+            flex-direction: column;
+            padding: 10px;
+            height: 100%;
+            width: 100%;
+
+            & > img{
+                display: none;
+            }
+
+            & > h1{
+                padding-top: 5rem;
+
+                & > span:nth-child(1){
+                    font-size: 2.5rem;
+                }
+
+                & > span:nth-child(2){
+                    font-size: 4.5rem;
+                }
+
+                & > span:nth-child(3){
+                    font-size: 3.5rem;
+                }
+            }
+
+            & > p{
+                font-size: 10px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+        }
+    }
+    .section2{
+        width: 100%;
+        height: 30vh;
+
+        & > .container-holder{
+            width: 95%;
+            height: 100%;
+            gap: 0;
+
+            & > .left{
+                width: 40%;
+                height: 100%;
+                justify-content: flex-end;
+                align-items: center;
+
+                & > h1{
+                    font-size: 14px;
+                }
+            }
+
+            & > .right{
+                width: 60%;
+                height: 100%;
+
+                & > img:nth-child(1){
+                    height: 55%;
+                    outline: 2px solid black;
+                }
+
+                & > img:nth-child(2){
+                    height: 40%;
+                    outline: 2px solid black;
+                }
+            }
+        }
+    }
+
+    .section3{
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        gap: 10px;
+        padding-top: 0;
+
+        & > h1{
+            height: 4vh;
+            width: 90%;
+            border-bottom: 4px solid rgb(9, 235, 167);
+            font-size: 13px;
+        }
+
+        & > .card-holder{
+            padding-top: 10px;
+
+            & > .top-holder , & > .bottom-holder{
+                flex-direction: column;
+                height: 38vh;
+                width: 100%;
+                gap: 10px;
+
+            & > .card-container{
+                width: 60%;
+                border-radius: 2px;
+                height: 12vh;
+
+                & > .top{
+                    filter:  saturate(0.9);
+                }
+
+                & > .bottom{
+                    display: flex;
+                    transform: translateY(-8vh);
+                    justify-content: center;
+                    text-align: center;
+
+                    & > h1{
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+            & > a{
+                position:unset;
+
+                & > button{
+                    width: 7rem;
+                    height: 2rem;
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+
+    .section4{
+        height: 80vh;
+        width: 100%;
+        gap: 10px;
+
+        & > h1{
+            height: 4vh;
+            width: 80%;
+            border-bottom: 4px solid rgb(9, 235, 167);
+            font-size: 13px;
+        }
+
+        & > .container-holder{
+            flex-direction: column-reverse;
+            justify-content: flex-end;
+            width: 100%;
+            height: 70%;
+            gap: 10px;
+            padding-top: 10px;
+
+            & > .left{
+                width: 100%;
+                height: 80%;
+                gap: 20px;
+
+                & > .container > p {
+                    display: flex;
+                    align-self: center;
+                    justify-self: center;
+                    font-size: 10px;
+                    padding-top: 10px;
+                }
+
+                & > .container:nth-child(1){
+                    display: flex;
+                    width: 12rem;
+                    height: 2.5rem;
+
+                    & > i{
+                        font-size: 15px;
+                        border: 2px solid black;
+                        height: 6.5vh;
+                        width: 2.7rem;
+                    }
+                }
+
+                & > .container:nth-child(2){
+                    width: 22rem;
+                    height: 2.5rem;
+                    background-color: rgb(252, 252, 205);
+                    text-align: center;
+                    padding-right: 12px;
+
+                    & > img{
+                        height: 6.5vh;
+                        width: 2.7rem;
+                        border: 2px solid black;
+                    }
+                }
+
+                & > .container:nth-child(3){
+                    width: 21rem;
+                    height: 2.5rem;
+                    background-color: rgb(252, 252, 205);
+                    text-align: center;
+
+                    & > i{
+                        font-size: 1rem;
+                        border: 2px solid black;
+                        height: 6.5vh;
+                        width: 2.7rem;
+                    }
+                }
+            }
+
+        & > .right{
+            width: 100%;
+            height: 45%;
+            justify-content: center;
+            align-items: center;
+
+            & > img{
+                height: 9.5rem;
+                width: 60%;
+                border: 2px solid black;
+            }
+        }
+    }
+
+        & > a > button{
+            width: 7rem;
+            height: 2rem;
+            font-size: 10px;
+        }
+    }
+
+    .section5{
+        height: 130vh;
+        width: 100%;
+        gap: 40px;
+        padding-top: 0;
+
+        & > h1{
+            height: 4vh;
+            width: 50%;
+            border-bottom: 4px solid rgb(9, 235, 167);
+            font-size: 13px;
+        }
+
+        & > .container-holder{
+            flex-direction: column;
+            height: 100vh;
+            width: 100%;
+            gap: 8rem;
+
+            & > .container{
+                gap: 0;
+
+                & > .top-holder{
+                    margin-left: 5rem;
+
+                    & > i{
+                        font-size: 10px;
+                    }
+
+                    & > h3{
+                        height: 2rem;
+                        width: 2rem;
+                    }
+                }
+
+                & > p{
+                    width: 12rem;
+                    font-size: 10px;
+                }
+
+                & > img{
+                    height: 48vh;
+                }
+            }
+        }
+
+        & > a > button{
+            width: 7rem;
+            height: 2rem;
+            font-size: 10px;
+        }
+    }
+
+    footer{
+        height: 10vh;
+        width: 100%;
+
+        & > b{
+            font-size: 10px;
+            padding: 0;
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+    header{
+
+        & > a > h2 {
+            font-size: 35px;
+            width: 12rem;
+        }
+
+        & > nav{
+            font-size: 14px;
+            gap: 2rem;
+
+            & > .btn{
+                width: 6.7rem;
+                height: 2rem;
+            }
+
+            & > a > button{
+                width: 4rem;
+            }
+
+            & > .btn:nth-child(6){
+                height: 2rem;
+            }
+        }
+    }
+
+    .section1{
+        & > .left-container> .image-holder{
+            height: 80vh;
+
+            & > img{
+                height: 70vh;
+            }
+        }
+
+        & > .right-container {
+            & > h1{
+
+                & > span:nth-child(1){
+                    font-size: 2.5rem;
+                }
+
+                & > span:nth-child(2){
+                    font-size: 6rem;
+                }
+
+                & > span:nth-child(3){
+                    font-size: 5rem;
+                }
+            }
+        }
+    }
+
+    .section2{
+        height: 90vh;
+
+        & > .container-holder{
+
+            & > .left{
+                & > h1{
+                    font-size: 2rem;
+                }
+            }
+
+            & > .right{
+
+                & > img:nth-child(1){
+                    height: 80%;
+                }
+
+                & > img:nth-child(2){
+                    height: 50%;
+                }
+            }
+        }
+    }
+
+    .section3{
+        height: 100vh;
+        gap: 2rem;
+
+        & > h1{
+            width: 80%;
+            font-size: 2rem;
+        }
+
+        & > .card-holder{  
+            & > .top-holder , & > .bottom-holder{
+
+                & > .card-container{
+                    width: 20rem;
+
+                    & > .top > img{
+                        filter: saturate(0.9);
+                    }
+
+                    & > .bottom{
+                        display: flex;
+                        transform: translateY(-20vh);
+                        justify-content: center;
+                        text-align: center;
+
+                        & > h1{
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .section4{
+        height: 140vh;
+        gap: 20px;
+
+        & > h1{
+            width: 70%;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        & > .container-holder{
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            height: 70%;
+            gap: 10px;
+
+            & > .left{
+                width: 100%;
+                height: 50%;
+                gap: 20px;
+            }
+        }
+    }
+
+    .section5{
+        height: 90vh;
+        gap:1rem;
+
+        & > h1{
+            width: 45%;
+            font-size: 2rem;
+        }
+
+        & > .container-holder{
+            height: 60%;
+            width: 90%;
+            gap: 4rem;
+
+            & > .container{
+                gap: 0;
+
+                & > .top-holder{
+                    margin-left: 1rem;
+
+                    & > h3{
+                        height: 2rem;
+                        width: 2rem;
+                    }
+                    & > i{
+                        font-size: 12px;
+                    }
+                }
+
+                & > p{
+                    width: 12rem;
+                    font-size: 12px;
+                }
+
+                & > img{
+                    height: 59vh;
+                }
+            }
+        }
+
+        & > a{
+            margin-bottom: 2rem;
+
+            & > button {
+                font-size: 14px;
+                width: 11rem;
+                height: 3.5rem;
             }
         }
     }
