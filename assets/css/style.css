@@ -697,6 +697,16 @@ header {
         }
     }
 }
+
+footer{
+    display: flex;
+    height: 12vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(251, 149, 165);
+    border-top: 3px solid black;
+  }
 /* Responsive for smaller screens */
 @media only screen and (max-width: 376px){
     header{
