@@ -121,16 +121,42 @@ AWD-FINALS-DREEPY
 |   |   └─ fileWith.jpeg/.jpg/.webp/.png
 |   └─ js
 |       └─ script.js
+└─ documentation
+|   └─ plan.md
+|   └─ About-Us
+|   |   └─ files related to about us documentation
+|   └─ Header
+|   |   └─ files related to header documentation
+|   └─ Landing-Page
+|       └─ files related to landing page documentation
 └─ pages
-|  └─ pageName
-|     └─ assets
-|     |  └─ css
-|     |  |  └─ style.css
-|     |  └─ img
-|     |  |  └─ fileWith.jpeg/.jpg/.webp/.png
-|     |  └─ js
-|     |     └─ script.js
-|     └─ index.html
+|  └─ About-Us-Page
+|  |   └─ assets
+|  |   |  └─ css
+|  |   |  |  └─ style.css
+|  |   |  └─ img
+|  |   |  |  └─ fileWith.jpeg/.jpg/.webp/.png
+|  |   |  └─ js
+|  |   |     └─ script.js
+|  |   └─ index.html
+|  └─ page2
+|  |   └─ assets
+|  |   |  └─ css
+|  |   |  |  └─ style.css
+|  |   |  └─ img
+|  |   |  |  └─ fileWith.jpeg/.jpg/.webp/.png
+|  |   |  └─ js
+|  |   |     └─ script.js
+|  |   └─ index.html
+|  └─ page3
+|      └─ assets
+|      |  └─ css
+|      |  |  └─ style.css
+|      |  └─ img
+|      |  |  └─ fileWith.jpeg/.jpg/.webp/.png
+|      |  └─ js
+|      |     └─ script.js
+|      └─ index.html
 └─ index.html
 └─ readme.md
 ```
