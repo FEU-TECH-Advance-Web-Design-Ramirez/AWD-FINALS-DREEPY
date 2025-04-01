@@ -209,3 +209,33 @@ document.getElementById("back").addEventListener("click", () => {
     createModal.style.display = "none";
     loginAccount.style.display = "flex";
 });
+
+const links = [
+    { elementId: "about" },
+    { elementId: "review" },
+    { elementId: "event" },
+    { elementId: "createEvent" },
+    { elementId: "gathering" },
+    { elementId: "joinevent" },
+    { elementId: "ourstory" },
+    { elementId: "sharereview" },
+    ];
+    
+links.forEach(({ elementId }) => {
+    const element = document.getElementById(elementId);
+        if (element) {
+        // Attach an event listener to each link
+        element.addEventListener("click", handleLinkClick);
+        }
+    });
+
+    // Function to handle the link click event
+function handleLinkClick(event) {
+    if (!localStorage.getItem("isLoggedIn") || localStorage.getItem("isLoggedIn") === "false") {
+    event.preventDefault();// Prevent navigation
+    // Show the modal if not logged in
+    modal.style.display = "flex";
+    }
+}
+
+
