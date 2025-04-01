@@ -450,7 +450,7 @@ header {
     align-items: center;
     flex-direction: column;
     background-color: rgb(252, 252, 205);
-    background-image: url(../img/abstract-shape\ \(2\).png);
+    background-image: url(../img/abstract-shape\ \(3\).png);
     background-position:top;
     background-size: cover;
     gap: 2rem;
@@ -706,7 +706,7 @@ footer{
     align-items: center;
     background-color: rgb(251, 149, 165);
     border-top: 3px solid black;
-}
+  }
 /* Responsive for smaller screens */
 @media only screen and (min-width: 375px) and (max-width: 440px){
     header{
