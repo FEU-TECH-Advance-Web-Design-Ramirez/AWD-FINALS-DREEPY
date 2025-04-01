@@ -97,14 +97,7 @@ document.getElementById("loginform").addEventListener("submit", function (event)
         const user = users.find(user => user.email === username && user.id );
 
         if (user ) {
-            Swal.fire({
-                title: "Login Successful!",
-                text: `Welcome, ${username.split("@")[0]}!`,
-                icon: "success",
-                timer: 1000,
-                showConfirmButton: false,
-            });
-
+            document.getElementById("loader").style.display = "flex";
             modal.style.display = "none";
             localStorage.setItem("isLoggedIn", "true");
             localStorage.setItem("userEmail", user.email);
@@ -284,6 +277,11 @@ setInterval(checkAccountStatus, 10000);
 
 
 document.getElementById("createEvent").addEventListener("click", () => {
+    if (!localStorage.getItem("isLoggedIn") || localStorage.getItem("isLoggedIn") === "false") {
+        modal.style.display = "flex"; // Show login modal instead
+        return; // Stop execution
+    }
+    
     document.getElementById("eventmodal").style.display = "flex";
     createEventform.style.display = "flex";
     submitEvent.style.display = "flex";
