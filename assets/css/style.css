@@ -706,7 +706,7 @@ footer{
     align-items: center;
     background-color: rgb(251, 149, 165);
     border-top: 3px solid black;
-  }
+}
 /* Responsive for smaller screens */
 @media only screen and (min-width: 375px) and (max-width: 440px){
     header{
