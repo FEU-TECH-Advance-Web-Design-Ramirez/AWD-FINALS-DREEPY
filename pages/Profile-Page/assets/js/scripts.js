@@ -155,3 +155,23 @@ togglePassword.addEventListener("click", function () {
 
     }
 });
+
+const signOutButton = document.getElementById("signout");
+
+// Handle sign out
+signOutButton.addEventListener("click", function () {
+    Swal.fire({
+        title: "Logged Out!",
+        text: "You have successfully signed out.",
+        icon: "success",
+        timer: 2000,
+        showConfirmButton: false,
+    });
+
+    setTimeout(() => {
+        localStorage.setItem("isLoggedIn", "false");
+        localStorage.removeItem("userEmail");
+        window.location.href = document.getElementById("default").href;
+    }, 2000);
+
+});

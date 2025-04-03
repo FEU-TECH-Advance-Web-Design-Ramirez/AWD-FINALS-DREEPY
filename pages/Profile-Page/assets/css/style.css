@@ -320,3 +320,12 @@ footer{
     background-color: rgb(251, 149, 165);
     border-top: 3px solid black;
 }
+
+.swal2-popup {
+    background-color: blueviolet !important;
+    color: white !important;
+    border-radius: 10px !important;
+}
+.swal2-success-ring {
+    border-color: white !important; 
+}
