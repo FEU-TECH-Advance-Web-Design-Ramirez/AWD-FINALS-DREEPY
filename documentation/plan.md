@@ -1,3 +1,4 @@
+# Plan - Week 1
 Color Palette:
 
     Primary Colors: Blue, violet, green, and yellow tones.
@@ -42,7 +43,7 @@ Main Content:
 
     Cards for events that include hover effects.
 
-    Plan - Week 2 
+# Plan - Week 2 
 
 Header and Navigation
 
@@ -104,3 +105,74 @@ Design:
     Includes social media icons for easy navigation to external platforms.
 
     Displays copyright information and a brief tagline.    
+
+# Final Plan  
+
+Color Palette:
+
+    Primary Colors: Vibrant tones of blue, violet, green, and yellow.
+
+    Accent Colors: Bright pink buttons, mint green hover effects.
+
+    Contrast: Bold contrast to ensure readability between background and text.
+
+Fonts:
+    Heading Font: "Bungee" for bold and distinct headings.
+
+    Body Font: Sans-serif for clarity.
+
+    Font Weights: Bold for headings, regular for body text.
+
+Layout:
+
+    Header & Navigation:
+
+    Sticky navigation bar with logo left-aligned, navigation links on the right (Home, Create, Events, About, Profile).
+
+    Hamburger menu for mobile devices.
+
+Hero Section:
+
+    Full-width background with overlay text.
+
+    Prominent "Create Gathering" button with a clear call-to-action.
+
+Main Content:
+
+    Grid-based layout for easy sectioning.
+
+    Event cards featuring hover effects for interaction.
+
+    User reviews and event testimonials.
+
+Responsive Design:
+
+    Mobile (375px x 667px): Single-column content layout.
+
+    Tablet (1024px x 768px): Two-column layout.
+
+    Laptop (1440px x 900px): Three-column content layout.
+
+    Large Screen (1680px x 900px): Optimized spacing for wide-view experience.
+
+About Page:
+
+    Text-based content with images/icons explaining platform purpose.
+
+    Clean, structured layout for easy reading.
+
+Footer:
+
+    Positioned at the bottom with links, social media icons, and copyright details.
+
+Functionalities:
+
+    Event Creation: Ability to create, edit, and manage events.
+
+    User Profile: Manage personal details and preferences.
+
+    Authentication: User login, sign-up, and session management.
+
+    Admin Panel: Admin controls for event and user management.
+
+    Smooth Animations & Transitions for enhanced user experience
