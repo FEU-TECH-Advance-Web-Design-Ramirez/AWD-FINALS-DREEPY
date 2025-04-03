@@ -6,6 +6,8 @@ const eventmodal = document.getElementById("eventmodal");
 const form = document.getElementById("createEventform");
 const createeventModal = document.getElementById("createeventModal");
 const joinEventmodal = document.getElementById("joinEventmodal");
+const loginButton = document.getElementById("loginbutton");//check
+const signOutButton = document.getElementById("signout");
 
 eventContainer.addEventListener("click", function (event) {
         eventmodal.style.display = "flex";
@@ -14,6 +16,23 @@ eventContainer.addEventListener("click", function (event) {
         form.style.display = "none";
 });
 
+// Handle sign out
+signOutButton.addEventListener("click", function () {
+    Swal.fire({
+        title: "Logged Out!",
+        text: "You have successfully signed out.",
+        icon: "success",
+        timer: 2000,
+        showConfirmButton: false,
+    });
+
+    setTimeout(() => {
+        localStorage.setItem("isLoggedIn", "false");
+        localStorage.removeItem("userEmail");
+        window.location.href = document.getElementById("default").href;
+    }, 2000);
+
+});
 function eventcloseModal() {
     eventmodal.style.display = "none";
     reviewContainer.style.display = "none";
