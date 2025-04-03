@@ -288,6 +288,15 @@ body{
     }
 }
 
+.swal2-popup {
+    background-color: blueviolet !important;
+    color: white !important;
+    border-radius: 10px !important;
+}
+.swal2-success-ring {
+    border-color: white !important; 
+}
+
 .eventmodal {
     display: none; /* Hidden by default */
     position: fixed;

@@ -1738,6 +1738,7 @@ footer{
 .swal2-success-ring {
     border-color: white !important; 
 }
+
 /* Responsive for smaller screens */
 @media only screen and (min-width: 375px) and (max-width: 440px){
     header{
