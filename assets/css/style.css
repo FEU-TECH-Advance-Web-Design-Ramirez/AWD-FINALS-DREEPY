@@ -1744,9 +1744,13 @@ footer{
     border-color: white !important; 
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> main
 =======
 >>>>>>> main
+=======
+
+>>>>>>> feature/Event-Page
 /* Responsive for smaller screens */
 @media only screen and (min-width: 375px) and (max-width: 440px){
     header{
