@@ -6,6 +6,8 @@ const loginButton = document.getElementById("loginbutton");//check
 const createModal = document.getElementById("createModal");
 const loginAccount = document.getElementById("loginAccount");
 const errorMessage = document.getElementById("errorMessage");
+const createErrorMessage = document.getElementById("createErrorMessage");
+
 const closeModalBtn = document.getElementById("closeModalBtn");
 const modal = document.getElementById("loginModal");
 const createAccountBtn = document.getElementById("Create");
@@ -161,12 +163,15 @@ document.getElementById("createform").addEventListener("submit", function (event
 
             // Validate password match
             if (password !== confirmPassword) {
-                alert("Passwords do not match.");
+                Swal.fire({
+                    title: "Passwords Do Not Match!",
+                    text: "The Password and Confirm Password fields must be the same.",
+                    icon: "error",
+                    timer: 3000,
+                    showConfirmButton: false
+                });
                 return;
             }
-
-            // Hide error message if validation passes
-            errorMessage.style.display = "none";
 
             // Create user object
             const userData = {
