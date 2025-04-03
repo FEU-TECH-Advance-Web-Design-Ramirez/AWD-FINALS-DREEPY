@@ -114,76 +114,82 @@ HTML, CSS, JavaScript – Used for designing and structuring the website to make
 
 ```
 AWD-FINALS-DREEPY
-└─ assets
-|   └─ css
-|   |   └─ style.css
-|   └─ img
-|   |   └─ fileWith.jpeg/.jpg/.webp/.png
-|   └─ js
-|       └─ script.js
-└─ documentation
-|   └─ plan.md
-|   └─ About-Us
-|   |   └─ files related to about us documentation
-|   └─ Header
-|   |   └─ files related to header documentation
-|   └─ Landing-Page
-|       └─ files related to landing page documentation
-└─ pages
-|  └─ About-us-page
-|  |   └─ assets
-|  |   |  └─ css
-|  |   |  |  └─ style.css
-|  |   |  └─ img
-|  |   |  |  └─ fileWith.jpeg/.jpg/.webp/.png
-|  |   |  └─ js
-|  |   |     └─ script.js
-|  |   └─ index.html
-|  └─ Admin-page
-|  |   └─ assets
-|  |   |  └─ css
-|  |   |  |  └─ style.css
-|  |   |  └─ js
-|  |   |     └─ script.js
-|  |   └─ index.html
-|  └─ AdminEvent-page
-|  |   └─ assets
-|  |   |  └─ css
-|  |   |  |  └─ style.css
-|  |   |  └─ img
-|  |   |  |  └─ fileWith.jpeg/.jpg/.webp/.png
-|  |   |  └─ js
-|  |   |     └─ script.js
-|  |   └─ index.html
-|  └─ AdminUser-page
-|  |   └─ assets
-|  |   |  └─ css
-|  |   |  |  └─ style.css
-|  |   |  └─ img
-|  |   |  |  └─ fileWith.jpeg/.jpg/.webp/.png
-|  |   |  └─ js
-|  |   |     └─ script.js
-|  |   └─ index.html
-|  └─ Event-page
-|  |   └─ assets
-|  |   |  └─ css
-|  |   |  |  └─ style.css
-|  |   |  └─ img
-|  |   |  |  └─ fileWith.jpeg/.jpg/.webp/.png
-|  |   |  └─ js
-|  |   |     └─ script.js
-|  |   └─ index.html
-|  └─Profile-page
-|  |   └─ assets
-|  |   |  └─ css
-|  |   |  |  └─ style.css
-|  |   |  └─ img
-|  |   |  |  └─ fileWith.jpeg/.jpg/.webp/.png
-|  |   |  └─ js
-|  |   |     └─ script.js
-|  |   └─ index.html
-└─ index.html
-└─ readme.md
+├── assets
+│   ├── css
+│   │   └── style.css
+│   ├── img
+│   │   └── [image files: .jpeg/.jpg/.webp/.png]
+│   └── js
+│       └── script.js
+├── documentation
+│   ├── About-Us
+│   │   ├── [files related to About Us documentation]
+│   │   ├── img
+│   ├── Event-Page
+│   │   ├── [files related to Event Page documentation]
+│   │   ├── img
+│   ├── Header
+│   │   ├── [files related to Header documentation]
+│   │   ├── img
+│   ├── Landing-Page
+│   │   ├── [files related to Landing Page documentation]
+│   │   ├── img
+│   ├── plan.md
+├── pages
+│   ├── About-Us-Page
+│   │   ├── assets
+│   │   │   ├── css
+│   │   │   │   └── style.css
+│   │   │   ├── img
+│   │   │   │   └── [image files: .jpeg/.jpg/.webp/.png]
+│   │   │   └── js
+│   │   │       └── script.js
+│   │   └── index.html
+│   ├── Admin-Page
+│   │   ├── assets
+│   │   │   ├── css
+│   │   │   │   └── style.css
+│   │   │   └── js
+│   │   │       └── script.js
+│   │   └── index.html
+│   ├── AdminEvent-Page
+│   │   ├── assets
+│   │   │   ├── css
+│   │   │   │   └── style.css
+│   │   │   ├── img
+│   │   │   │   └── [image files: .jpeg/.jpg/.webp/.png]
+│   │   │   └── js
+│   │   │       └── script.js
+│   │   └── index.html
+│   ├── AdminUser-Page
+│   │   ├── assets
+│   │   │   ├── css
+│   │   │   │   └── style.css
+│   │   │   ├── img
+│   │   │   │   └── [image files: .jpeg/.jpg/.webp/.png]
+│   │   │   └── js
+│   │   │       └── script.js
+│   │   └── index.html
+│   ├── Event-Page
+│   │   ├── assets
+│   │   │   ├── css
+│   │   │   │   └── style.css
+│   │   │   ├── img
+│   │   │   │   └── [image files: .jpeg/.jpg/.webp/.png]
+│   │   │   └── js
+│   │   │       └── script.js
+│   │   └── index.html
+│   └── Profile-Page
+│       ├── assets
+│       │   ├── css
+│       │   │   └── style.css
+│       │   ├── img
+│       │   │   └── [image files: .jpeg/.jpg/.webp/.png]
+│       │   └── js
+│       │       └── script.js
+│       └── index.html
+├── index.html
+└── readme.md
 ```
 
 ## Resources
