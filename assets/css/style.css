@@ -707,11 +707,6 @@ footer{
     background-color: rgb(251, 149, 165);
     border-top: 3px solid black;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> main
 
 .modal {
     display: none; /* Hidden by default */
@@ -1743,14 +1738,6 @@ footer{
 .swal2-success-ring {
     border-color: white !important; 
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> main
-=======
->>>>>>> main
-=======
-
->>>>>>> feature/Event-Page
 /* Responsive for smaller screens */
 @media only screen and (min-width: 375px) and (max-width: 440px){
     header{
