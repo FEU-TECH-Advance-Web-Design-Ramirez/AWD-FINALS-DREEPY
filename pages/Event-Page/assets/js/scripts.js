@@ -8,6 +8,9 @@ const createeventModal = document.getElementById("createeventModal");
 const joinEventmodal = document.getElementById("joinEventmodal");
 const loginButton = document.getElementById("loginbutton");//check
 const signOutButton = document.getElementById("signout");
+const hamburgerButton = document.getElementById("hamburger_icon");
+const navLinks = document.getElementById("navlinks");
+const icon = hamburgerButton.querySelector("i"); // Use optional 
 
 eventContainer.addEventListener("click", function (event) {
         eventmodal.style.display = "flex";
@@ -16,6 +19,12 @@ eventContainer.addEventListener("click", function (event) {
         form.style.display = "none";
 });
 
+
+hamburgerButton.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+    icon.classList.toggle("fa-bars");
+    icon.classList.toggle("fa-xmark");
+});
 // Handle sign out
 signOutButton.addEventListener("click", function () {
     Swal.fire({
