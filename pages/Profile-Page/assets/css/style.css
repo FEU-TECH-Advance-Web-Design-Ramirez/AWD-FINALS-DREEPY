@@ -329,3 +329,74 @@ footer{
 .swal2-success-ring {
     border-color: white !important; 
 }
+
+@media only screen and (min-width: 375px) and (max-width: 440px){
+    header{
+        width: 100%;
+        height: 50px;
+
+        & > a > h2 {
+            font-size: 1rem;
+            margin-left: 10px;
+            margin-top: 7px;
+            width: 6.2rem;
+            border-radius: 8px;
+        }
+        & nav > .btn{
+            height: 2rem;
+            width: 3rem;
+        }
+    }
+
+    .section1{
+        & > .editHolder{
+            width: 93%;
+
+            & > h1{
+                font-size: 2rem;
+            }
+
+            & > form {
+                & > label{
+                    font-size: 14px;
+                }
+
+                & > .input-holder {
+                    & > i {
+                        &:nth-child(2){
+                            margin-left: 16.5rem;
+                        }
+                    }
+                }
+            }
+
+            & > .button-holder{
+                gap: 10px;
+
+                & > button {
+                    width: 6rem;
+                    flex-direction: column;
+                    gap: 5px;
+                    font-size: 10px;
+
+                    &:nth-child(3){
+                        width: 6rem;
+                    }
+
+                    &:nth-child(2){
+                        width: 6rem;
+                    }
+                }
+            }
+        }
+    }
+    footer{
+        height: 10vh;
+        width: 100%;
+
+        & > b{
+            font-size: 10px;
+            padding: 0;
+        }
+    }
+}
