@@ -130,7 +130,7 @@ AWD-FINALS-DREEPY
 |   └─ Landing-Page
 |       └─ files related to landing page documentation
 └─ pages
-|  └─ About-Us-Page
+|  └─ About-us-page
 |  |   └─ assets
 |  |   |  └─ css
 |  |   |  |  └─ style.css
@@ -139,7 +139,14 @@ AWD-FINALS-DREEPY
 |  |   |  └─ js
 |  |   |     └─ script.js
 |  |   └─ index.html
-|  └─ page2
+|  └─ Admin-page
+|  |   └─ assets
+|  |   |  └─ css
+|  |   |  |  └─ style.css
+|  |   |  └─ js
+|  |   |     └─ script.js
+|  |   └─ index.html
+|  └─ AdminEvent-page
 |  |   └─ assets
 |  |   |  └─ css
 |  |   |  |  └─ style.css
@@ -148,15 +155,33 @@ AWD-FINALS-DREEPY
 |  |   |  └─ js
 |  |   |     └─ script.js
 |  |   └─ index.html
-|  └─ page3
-|      └─ assets
-|      |  └─ css
-|      |  |  └─ style.css
-|      |  └─ img
-|      |  |  └─ fileWith.jpeg/.jpg/.webp/.png
-|      |  └─ js
-|      |     └─ script.js
-|      └─ index.html
+|  └─ AdminUser-page
+|  |   └─ assets
+|  |   |  └─ css
+|  |   |  |  └─ style.css
+|  |   |  └─ img
+|  |   |  |  └─ fileWith.jpeg/.jpg/.webp/.png
+|  |   |  └─ js
+|  |   |     └─ script.js
+|  |   └─ index.html
+|  └─ Event-page
+|  |   └─ assets
+|  |   |  └─ css
+|  |   |  |  └─ style.css
+|  |   |  └─ img
+|  |   |  |  └─ fileWith.jpeg/.jpg/.webp/.png
+|  |   |  └─ js
+|  |   |     └─ script.js
+|  |   └─ index.html
+|  └─Profile-page
+|  |   └─ assets
+|  |   |  └─ css
+|  |   |  |  └─ style.css
+|  |   |  └─ img
+|  |   |  |  └─ fileWith.jpeg/.jpg/.webp/.png
+|  |   |  └─ js
+|  |   |     └─ script.js
+|  |   └─ index.html
 └─ index.html
 └─ readme.md
 ```
