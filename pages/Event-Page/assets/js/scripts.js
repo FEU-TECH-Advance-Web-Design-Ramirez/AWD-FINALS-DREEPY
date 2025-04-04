@@ -183,7 +183,7 @@ if (closeeventmodal) closeeventmodal.addEventListener("click", eventcloseModal);
             axios.post(Event_API_URL, newEvent)
             .then(response => {
                 Swal.fire({ title: "Event Created!", text: "Your event has been submitted successfully. Please wait for admin approval.", icon: "success", timer: 3000, showConfirmButton: false });
-                eventmodal.style.display = "none";
+                eventmodal.style.display = "none";  
                 
                 console.log("Response:", response);
             })
@@ -241,4 +241,150 @@ if (closeeventmodal) closeeventmodal.addEventListener("click", eventcloseModal);
     if (closeeventmodal) closeeventmodal.addEventListener("click", eventcloseModal);
     
     
-    
+    // Function to fetch and display events from the API
+    async function displayEvents() {
+    try {
+        // Fetch event data from the API
+        const response = await fetch('https://demo-api-skills.vercel.app/api/SocialButterfly/events');
+        
+        // Check if the response status is ok (200)
+        if (!response.ok) {
+            throw new Error('Failed to fetch events');
+        }
+
+        // Parse the response as JSON
+        const events = await response.json();
+
+        // Get the container where events will be displayed
+        const eventholder = document.getElementById('eventholder');
+
+        // Clear any existing content
+        eventholder.innerHTML = '';
+
+        // Check if there are any events
+        if (Array.isArray(events) && events.length > 0) {
+            events.forEach(event => {
+                // Create a new event container
+                const eventDiv = document.createElement('div');
+                eventDiv.classList.add('event-container');
+                eventDiv.setAttribute("data-event-id", event.id); // Store event ID
+
+                // Event content
+                eventDiv.innerHTML = `
+                    <div class="top"><i class="fa-solid fa-music"></i></div>
+                    <div class="bottom">
+                        <h1>${event.title}</h1>
+                        <p>${event.description}</p>
+                        <p><i class="fa-solid fa-location-dot"></i>${event.location}</p>
+                        <p><i class="fa-solid fa-calendar"></i>${event.date}</p>
+                    </div>
+                    <div class="creator"><p><i class="fa-solid fa-user"></i>Hosted By: ${event.submittedBy}</p></div>
+                `;
+
+                eventDiv.addEventListener("click", function () {
+                    const clickedEventId = this.getAttribute("data-event-id"); // Get event ID
+                    console.log("Clicked Event ID:", clickedEventId); // Log the ID
+                    document.getElementById('eventitle').textContent = event.title;
+                    document.getElementById('eventlocation').innerHTML = `<i class="fa-solid fa-location-dot"></i>${event.location}`;
+
+                    document.getElementById('eventdate').innerHTML = `<i class="fa-solid fa-calendar"></i>${event.date}`;
+                    document.getElementById('eventgoing').innerHTML = `<i class="fa-solid fa-thumbs-up"></i>${event.going || 0} going`; // Add the number of people going
+                    document.getElementById('eventdescription').textContent = event.description;
+
+                    // Show the event modal and join event modal, hide the create event modal and form
+                    eventmodal.style.display = "flex";
+                    joinEventmodal.style.display = "flex";
+                    createeventModal.style.display = "none";
+                    form.style.display = "none";
+                    localStorage.setItem('editEventId', clickedEventId);
+
+                });
+
+                const editBtn = document.getElementById("editBtn");
+                if (localStorage.getItem("userId") === event.submittedBy) {
+                    editBtn.style.display = 'flex';
+                }
+
+                editBtn.addEventListener('click', function () {
+                    const eventDate = new Date(event.date); // Convert the string to a Date object
+                    const formattedDate = eventDate.toISOString().split('T')[0]; // Get the date part (yyyy-mm-dd)
+                    // Populate the form fields with the current event details
+                    document.getElementById('eventTitle').value = event.title;
+                    document.getElementById('eventCategory').value = event.category;
+                    document.getElementById('eventDate').value = formattedDate;
+                    document.getElementById('eventLocation').value = event.location;
+                    document.getElementById('eventDescription').value = event.description;
+
+                    // Show the form for editing
+                    eventmodal.style.display = "flex";
+                    createeventModal.style.display = "flex";
+                    joinEventmodal.style.display = "none"
+                    createEventform.style.display = "flex";
+                    submitEvent.style.display = "flex";
+                    form.style.display = "flex";
+                    confirmationContainer.style.display = "none";
+                    btnHolder.style.display = "none";
+                    formBtn.style.backgroundColor= "rgb(205, 0, 130)";
+                    formBtn.style.color= "whitesmoke";
+                    formBtn.style.height= "2.3rem";
+                    confirmationBtn.style.backgroundColor= "whitesmoke";
+                    confirmationBtn.style.color= "rgb(205, 0, 130)";
+                    confirmationBtn.style.height= "1.7rem";
+                    categoryOption.style.display = "none";
+                    eventCategory.style.display = "flex";
+                    document.getElementById('confirmEvent').style.display = "none";
+                    document.getElementById('editsubmit').style.display = "flex";
+
+                });
+
+
+document.getElementById("editsubmit").addEventListener("click", function () {
+    // Collect updated data from the form
+    const updatedEvent = {
+        title: eventTitle,
+      category: eventCategory,
+        location:eventLocation,
+        description: eventDescription,
+        date: eventDate,
+    };
+
+    const eventId = localStorage.getItem("editEventId"); // Get event ID
+    axios.put(`https://demo-api-skills.vercel.app/api/SocialButterfly/events/${eventId}`, updatedEvent)
+        .then(response => {
+            Swal.fire({
+                title: "Event Updated!",
+                text: "Your event has been successfully updated.",
+                icon: "success",
+                timer: 3000,
+                showConfirmButton: false
+            });
+            eventmodal.style.display = "none";
+
+            console.log("Response:", response);
+        })
+        .catch(error => {
+            console.error("Error updating event:", error);
+            console.error("Error Response:", error.response?.data || error.message);
+            console.log("Sending Event Data:", updatedEvent);
+
+            Swal.fire({
+                title: "Error",
+                text: "Failed to update event.",
+                icon: "error"
+            });
+        });
+});
+
+                // Append the event to the container
+                eventholder.appendChild(eventDiv);
+            });
+        } else {
+            eventContainer.innerHTML = '<p>No events found.</p>';
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+// Call the function to display events when the page loads
+document.addEventListener('DOMContentLoaded', displayEvents);

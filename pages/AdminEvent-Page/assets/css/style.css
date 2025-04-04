@@ -175,7 +175,6 @@ header {
     }
 }
 
-
 .section1{
     display: flex;
     flex-direction: column;
@@ -356,125 +355,58 @@ header {
     }
 
     & > .event-container{
-        display: none;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 100%;
-        height: 100%;
+        display: flex;
+        flex-direction: column;
         background-color: rgb(252, 252, 205);
-        gap: 2rem;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-        padding: 4rem;
-        margin-top: 10vh;
+        margin-top: 12vh;
+        width: 100%;
+        height: 100vh;
+        font-size: 12px;
+        
+        & > table{
+            width: 90%;
+            height: 90%;
 
-        & .container{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 60vh;
-            width: 20rem;
-            background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(232,232,232,1) 100%, rgba(235,235,235,1) 100%);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 1px 1px 15px;
-            cursor: pointer;
-    
-            & > .top{
-                display: flex;
-                height: 40%;
-                width: 100%;
-                justify-content: center;
-                align-items: center;
-                background: radial-gradient(circle, rgba(255,3,209,1) 0%, rgba(218,0,185,1) 100%, rgba(255,0,251,1) 100%);
-    
-                & > i{
-                    font-size: 4rem;
-                    color: white;
-                }
+            & > thead{
+             text-align: center;
+             
             }
-            & > .bottom{
-                display: flex;
-                height: 50%;
-                width: 100%;
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: space-evenly;
-                padding: 10px;
-    
-                & > .button-holder{
+
+            & > tbody{
+                & > td{
                     display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 100%;
-                    height: 10vh;
-                    gap: 1rem;
+                    flex-direction: row;
                 }
-                & > h1{
-                    font-weight: 800;
-                    font-size: 1.5rem;
-                    display: -webkit-box;
-                    -webkit-box-orient: vertical;
-                    -webkit-line-clamp: 2; /* Limit to 3 lines */
-                    height: 4rem;
-                    line-clamp: 2;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                    width: 100%;
+
+                & .description{
+                    word-break: break-all;
+                    max-width: 20rem;
                 }
-    
-                & > p{
-                    font-family: "Playwrite DE VA", cursive;  
-                }
-                
-                & > p:nth-child(2){
+                & .button-holder{
                     display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    height: 100%;
+                    flex-direction: row;
+                    min-width: 9rem;
                     gap: 10px;
-    
-                    & > i{
-                        color: rgb(211, 0, 0);
-                    }
-                }
-    
-                & > p:nth-child(3){
-                    display: flex;
                     justify-content: center;
                     align-items: center;
-                    gap: 10px;
-                    font-size: 14px;
-                    color: rgb(72, 72, 72);
-                }
-                
-                & > p:nth-child(4){
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 10px;
-                    & > i{
-                        color: rgb(1, 179, 1);
+
+                    & > button{
+                        height: 1.8rem;
+                        border: none;
+                        background-color: rgb(0, 184, 0);
+                        font-size: 12px;
+                        color: white;
+    
+                        &:nth-child(1){
+                            background-color: red;
+                        }
                     }
                 }
             }
-            & > .creator{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 10%;
-                width: 100%;
-                border-top: 2px solid black;
     
-                & > p{
-                    padding-top: 20px;
-                    gap: 10px;
-                    display: flex;
-                    font-size: 14px;
-                    justify-content: center;
-                    align-items: center;
-                }
-            }
         }
     }
 }
@@ -1007,8 +939,6 @@ footer{
     border-color: white !important;
 }
 
-<<<<<<< HEAD
-=======
 @media only screen and (min-width: 375px) and (max-width: 440px) {
 	header {
 		width: 100%;
@@ -1288,4 +1218,3 @@ footer{
         }
     }
 }
->>>>>>> origin/main

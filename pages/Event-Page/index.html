@@ -95,6 +95,7 @@
             <div class="button-holder" id="btnHolder">
                 <button id="backConfirmation"><i class="fa-solid fa-arrow-left"></i>Back</button>
                 <button type="submit" id="confirmEvent"><i class="fa-solid fa-check"></i>Submit</button>
+                <button id="editsubmit" class="editsubmit"><i class="fa-solid fa-check"></i>Submit</button>
             </div>
         </div>
         <div class="joinevent-modal" id="joinEventmodal">
@@ -102,15 +103,15 @@
             <div class="event-container" id="joinEventcontainer">
                 <div class="top"><i class="fa-solid fa-music"></i></div>
                 <div class="bottom">
-                    <h1>Rakrakan festival 2024</h1>
-                    <p><i class="fa-solid fa-location-dot"></i>Cubao expo, Quezon City</p>
-                     <p><i class="fa-solid fa-calendar"></i>2025/02/19</p>
-                     <p><i class="fa-solid fa-thumbs-up"></i>7 going</p>
+                    <h1 id="eventitle">Rakrakan festival 2024</h1>
+                    <p id="eventlocation"><i class="fa-solid fa-location-dot"></i>Cubao expo, Quezon City</p>
+                     <p id="eventdate"><i class="fa-solid fa-calendar"></i>2025/02/19</p>
+                     <p id="eventgoing"><i class="fa-solid fa-thumbs-up"></i>7 going</p>
                 </div>
-                <div class="creator"><p><i class="fa-solid fa-user"></i>Hosted By: matthewyanga00@gmail.com</p></div>
+                <div class="creator"><p id="eventhost" ><i class="fa-solid fa-user"></i>Hosted By: matthewyanga00@gmail.com</p></div>
             </div>
             <div class="description">
-                <p>Get ready for an electrifying night of live music, unforgettable performances, and an atmosphere like no other! Join us for [Concert Name], featuring [Artist/Band Name], as they take the stage to deliver an incredible show filled with chart-topping hits and breathtaking visuals.
+                <p id="eventdescription">Get ready for an electrifying night of live music, unforgettable performances, and an atmosphere like no other! Join us for [Concert Name], featuring [Artist/Band Name], as they take the stage to deliver an incredible show filled with chart-topping hits and breathtaking visuals.
                 </p>
             </div>
           </div>
@@ -194,13 +195,14 @@
                 </div>
             </div>
             <div class="button-holder">
-                <button id="joinBtn">Join Event</button>
+                <button id="editBtn">Edit Event</button>
             </div>
           </div>
-        </div> 
+        </div>
     </div>
 </div>
-<section class="section1">
+<section class="section1" id="section1">
+    <div class="event-holder" id="eventholder">
     <div class="event-container" id="eventcontainer">
         <div class="top"><i class="fa-solid fa-music"></i></div>
         <div class="bottom">
@@ -211,12 +213,13 @@
         </div>
         <div class="creator"><p><i class="fa-solid fa-user"></i>Hosted By: matthewyanga00@gmail.com</p></div>
     </div>
+</div>
+
 </section>
 <a id="default" href="../../index.html"></a>
 <footer>
     <b>Copyright ©2025: HANGIFY</b>
 </footer>
-
 <script src="./assets/js/scripts.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
