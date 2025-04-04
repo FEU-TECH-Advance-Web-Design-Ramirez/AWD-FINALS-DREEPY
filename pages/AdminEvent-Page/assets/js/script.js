@@ -10,6 +10,7 @@ const dropdown = document.getElementById("dropdown");
 const closeeventmodal = document.getElementById("closeeventmodal");
 const submitEvent = document.getElementById("submitEvent");
 const fetchBtn = document.getElementById("fetch");
+const eventsContainer = document.getElementById("eventsContainer");
 
 document.getElementById("createEventBtn").addEventListener("click", () => {
   if (
@@ -226,13 +227,26 @@ function eventcloseModal() {
 }
 if (closeeventmodal) closeeventmodal.addEventListener("click", eventcloseModal);
 
-const API_URL = "https://demo-api-skills.vercel.app/api/SocialButterfly/events";
+const Fetch_API_URL = "https://demo-api-skills.vercel.app/api/SocialButterfly/admin/events";
 let eventsData = [];
+// Mapping categories to Font Awesome icons
+const categoryIcons = {
+  Music: "fa-music",
+  Sports: "fa-football-ball",
+  Education: "fa-graduation-cap",
+  Art: "fa-palette",
+  Gaming: "fa-gamepad",
+  Wellness: "fa-spa",
+  "Outdoor & Travel": "fa-mountain-sun",
+  "Community & Charity": "fa-hands-helping",
+  "Business & Networking": "fa-briefcase",
+};
+let categoryIcon = categoryIcons[eventCategory] || "fa-solid"; // Default icon if category isn't listed
 
 // Fetch All Events
 function fetchAllEvents() {
   axios
-    .get(API_URL)
+    .get(Fetch_API_URL)
     .then((response) => {
       eventsData = response.data;
       displayEvents(eventsData);
@@ -252,22 +266,27 @@ window.addEventListener("load", fetchAllEvents);
 function displayEvents(events) {
   eventsContainer.innerHTML = "";
   eventsContainer.style.display = "flex";
+  
   if (events.length > 0) {
     events.forEach((event) => {
       const eventContainer = document.createElement("div");
       eventContainer.classList.add("event-container");
       eventContainer.dataset.eventId = event.id;
+      let categoryIcon = categoryIcons[event.category] || "fa-solid"; // Default icon if category isn't listed
 
       eventContainer.innerHTML = `
-                <div class="container">
-                    <h3>${event.title || "N/A"}</h3>
-                    <p>${event.description || "No description"}</p>
-                    <p><strong>Date:</strong> ${event.date || "N/A"}</p>
-                    <p><strong>Location:</strong> ${event.location || "N/A"}</p>
-                    <button onclick="editEvent('${event.id}')">Edit</button>
-                    <button onclick="deleteEvent('${event.id}')">Delete</button>
+      <div class= "container">
+              <div class="top"><i class="fa-solid ${categoryIcon}"></i></div>
+                <div class="bottom">
+                    <h1>${event.title}</h1>
+                    <p><i class="fa-solid fa-location-dot"></i>${event.location}</p>
+                    <p><i class="fa-solid fa-calendar"></i>${event.date}</p>
+                    <p><i class="fa-solid fa-thumbs-up"></i>7 going</p>
                 </div>
+                <div class="creator"><p><i class="fa-solid fa-user"></i>Hosted By: ${event.submittedBy}</p></div>
+              </div>
             `;
+
       eventsContainer.appendChild(eventContainer);
     });
   } else {
@@ -304,4 +323,64 @@ document.getElementById("validate").addEventListener("click", () => {
 
 document.getElementById("closevalidate").addEventListener("click", () => {
   document.getElementById("validateform").style.display = "none";
+});
+
+//validation for events
+const API_BASE_URL = "https://demo-api-skills.vercel.app/api/SocialButterfly";
+
+// Validate Event (Admin Only)
+document.getElementById("validateform").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const eventId = document.getElementById("validateinput").value.trim();
+    const adminId = '620b24d1-db42-4347-aaa3-029fbc69a5c6';
+    const validated = 'true';
+
+    if (!eventId || !adminId) {
+        alert("Event ID and Admin ID are required.");
+        return;
+    }
+    const test = {id: eventId, adminId}
+
+    console.log("Validating Event:", { eventId, adminId, validated }); // Debugging
+
+    try {
+        const response = await fetch(`${API_BASE_URL}/admin/events/${eventId}/validate`, {
+            method: "POST",
+            body: JSON.stringify(test)
+        });
+
+        const responseData = await response.json(); // Get response data
+        console.log("API Response:", responseData); // Debugging
+
+        if (!response.ok) {
+            throw new Error(responseData.message || "Failed to validate event.");
+        }
+        Swal.fire({
+          title: "Validated!",
+          text: "You have successfully validated an event",
+          icon: "success",
+          timer: 2000,
+          showConfirmButton: false,
+        });
+
+    } catch (error) {
+        console.error("Error:", error);
+        alert(error.message);
+    }
+});
+
+document.getElementById("validate").addEventListener("click", () => {
+    document.getElementById("validateform").style.display = "flex";
+});
+const API_Fetch_URL = "https://demo-api-skills.vercel.app/api/SocialButterfly";
+
+const eventContainer = document.getElementById("eventsContainer");
+eventContainer.addEventListener("click", function (event) {
+  let eventContainer = event.target.closest(".container");
+
+  if (eventContainer) {
+        document.getElementById("modal").style.display = "flex";
+        document.getElementById("modalApproval").style.display = "flex";
+  }
 });
