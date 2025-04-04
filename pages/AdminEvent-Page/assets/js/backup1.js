@@ -11,7 +11,6 @@ const closeeventmodal = document.getElementById("closeeventmodal");
 const submitEvent = document.getElementById("submitEvent");
 const fetchBtn = document.getElementById("fetch");
 const eventsContainer = document.getElementById("eventsContainer");
-const initial = document.getElementById("initial");
 
 document.getElementById("createEventBtn").addEventListener("click", () => {
   if (
@@ -34,6 +33,7 @@ document.getElementById("createEventBtn").addEventListener("click", () => {
   confirmationBtn.style.backgroundColor = "whitesmoke";
   confirmationBtn.style.color = "rgb(205, 0, 130)";
   confirmationBtn.style.height = "1.7rem";
+  modalApproval.style.display = "none";
 });
 
 submitEvent.addEventListener("click", function () {
@@ -182,7 +182,9 @@ submitEvent.addEventListener("click", function () {
     });
 });
 
-document.getElementById("backConfirmation").addEventListener("click", function () {
+document
+  .getElementById("backConfirmation")
+  .addEventListener("click", function () {
     document.getElementById("createEventform").style.display = "flex";
     document.getElementById("confirmationContainer").style.display = "none";
     submitEvent.style.display = "flex";
@@ -195,7 +197,9 @@ document.getElementById("backConfirmation").addEventListener("click", function (
     confirmationBtn.style.height = "1.7rem";
   });
 
-document.getElementById("categoryOption").addEventListener("change", function () {
+document
+  .getElementById("categoryOption")
+  .addEventListener("change", function () {
     var inputField = document.getElementById("eventCategory");
 
     if (this.value === "other") {
@@ -245,7 +249,7 @@ function fetchAllEvents() {
   axios
     .get(Fetch_API_URL)
     .then((response) => {
-      eventsData = response.data.filter(event => event.validated === false);
+      eventsData = response.data;
       displayEvents(eventsData);
     })
     .catch((error) => {
@@ -257,78 +261,38 @@ function fetchAllEvents() {
       });
     });
 }
-
-// window.addEventListener("load", fetchAllEvents);
-function fetchAllValidEvents() {
-  axios
-    .get(`${API_BASE_URL}/events`)
-    .then((response) => {
-      displayEvents(eventsData);
-    })
-    .catch((error) => {
-      console.error("Error fetching events:", error);
-      Swal.fire({
-        title: "Error",
-        text: "Failed to fetch events.",
-        icon: "error",
-      });
-    });
-}
-
+window.addEventListener("load", fetchAllEvents);
 
 // Display Events
 function displayEvents(events) {
   eventsContainer.innerHTML = "";
   eventsContainer.style.display = "flex";
-
+  
   if (events.length > 0) {
-    const table = document.createElement("table");
-    table.classList.add("table");
+    events.forEach((event) => {
+      const eventContainer = document.createElement("div");
+      eventContainer.classList.add("event-container");
+      eventContainer.dataset.eventId = event.id;
+      let categoryIcon = categoryIcons[event.category] || "fa-solid"; // Default icon if category isn't listed
 
-    // Create table headers
-    table.innerHTML = `
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>ID</th>
-          <th>Title</th>
-          <th>Description</th>
-          <th>Category</th>
-          <th>Location</th>
-          <th>Date</th>
-          <th>Host</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    `;
+      eventContainer.innerHTML = `
+      <div class= "container">
+              <div class="top"><i class="fa-solid ${categoryIcon}"></i></div>
+                <div class="bottom">
+                    <h1>${event.title}</h1>
+                    <p>${event.id}</p>
+                    <p><i class="fa-solid fa-location-dot"></i>${event.location}</p>
+                    <p><i class="fa-solid fa-calendar"></i>${event.date}</p>
+                    <p><i class="fa-solid fa-thumbs-up"></i>7 going</p>
+                    <div class="button-holder"><button id="deny">Deny</button><button id="approve">Approve</button></div>
+                </div>
+                <div class="creator"><p><i class="fa-solid fa-user"></i>Hosted By: ${event.submittedBy}</p></div>
+              </div>
+            `;
+            eventContainer.addEventListener("click", () => showEventModal(event));
 
-    const tbody = table.querySelector("tbody");
-
-    // Populate table rows
-    events.forEach((event, index) => {
-      let categoryIcon = categoryIcons[event.category] || "fa-solid";
-      const row = document.createElement("tr");
-      row.dataset.eventId = event.id;
-      row.innerHTML = `
-        <th scope="row">${index + 1}</th>
-        <td>${event.id || "N/A"}</td>
-        <td>${event.title || "N/A"}</td>
-        <td class="description">${event.description || "N/A"}</td>
-        <td><i class="fa-solid ${categoryIcon}"></i> ${event.category || "N/A"}</td>
-        <td>${event.location || "N/A"}</td>
-        <td>${event.date || "N/A"}</td>
-        <td>${event.submittedBy || "N/A"}</td>
-        <td class="button-holder">
-          <button class="deny-btn">Deny</button>
-          <button class="approve-btn">Approve</button>
-        </td>
-      `;
-      tbody.appendChild(row);
+      eventsContainer.appendChild(eventContainer);
     });
-
-    eventsContainer.appendChild(table);
-    initial.style.display = "none";
   } else {
     Swal.fire({
       title: "No Events Found",
@@ -337,7 +301,6 @@ function displayEvents(events) {
     });
   }
 }
-
 
 fetchBtn.addEventListener("click", () => {
   fetchAllEvents();
@@ -370,75 +333,96 @@ document.getElementById("closevalidate").addEventListener("click", () => {
 const API_BASE_URL = "https://demo-api-skills.vercel.app/api/SocialButterfly";
 
 // Validate Event (Admin Only)
-// Hardcoded Admin ID
-// Hardcoded Admin ID
+document.getElementById("validateform").addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-// Event delegation to handle button clicks
-document.getElementById("eventsContainer").addEventListener("click", async function (e) {
-  if (e.target.classList.contains("approve-btn") || e.target.classList.contains("deny-btn")) {
-    const isApprove = e.target.classList.contains("approve-btn");
-    const row = e.target.closest("tr");
-    const eventId = row?.dataset.eventId;
+    const eventId = document.getElementById("validateinput").value.trim();
     const adminId = '620b24d1-db42-4347-aaa3-029fbc69a5c6';
-    const validated = 'true';  
+    const validated = 'true';
 
     if (!eventId || !adminId) {
-      alert("Missing event ID or admin ID.");
-      return;
+        alert("Event ID and Admin ID are required.");
+        return;
     }
+    const test = {id: eventId, adminId}
+
+    console.log("Validating Event:", { eventId, adminId, validated }); // Debugging
 
     try {
-      let response;
-      if (isApprove) {
-        // Approve with POST
-        const validationData = { id: eventId, adminId, validated};
-        
-      fetch(`${API_BASE_URL}/admin/events/${eventId}/validate`, {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(validationData),
-      })
-
-      } else {
-        // Deny with DELETE
-        response = await fetch(`${API_BASE_URL}/events/${eventId}`, {
-        method: "DELETE",
+        const response = await fetch(`${API_BASE_URL}/admin/events/${eventId}/validate`, {
+            method: "POST",
+            body: JSON.stringify(test)
         });
-      }
 
-      Swal.fire({
-        title: isApprove ? "Approved!" : "Denied!",
-        text: `Event has been ${isApprove ? "approved" : "denied"} successfully.`,
-        icon: "success",
-        timer: 2000,
-        showConfirmButton: false,
-      }).then(() => {
-        row.disable();
-      });
-      setTimeout(() => {
-        window.location.reload();
-        }, 2000);
+        const responseData = await response.json(); // Get response data
+        console.log("API Response:", responseData); // Debugging
 
+        if (!response.ok) {
+            throw new Error(responseData.message || "Failed to validate event.");
+        }
+
+        alert("Event validated successfully!");
     } catch (error) {
-      console.error("Error:", error);
-      alert(error.message);
+        console.error("Error:", error);
+        alert(error.message);
     }
-  }
 });
 
 document.getElementById("validate").addEventListener("click", () => {
-  fetchAllValidEvents();
+    document.getElementById("validateform").style.display = "flex";
 });
 const API_Fetch_URL = "https://demo-api-skills.vercel.app/api/SocialButterfly";
+const modalApproval = document.getElementById("modalApproval");
 
-const eventContainer = document.getElementById("eventsContainer");
-eventContainer.addEventListener("click", function (event) {
-  let eventContainer = event.target.closest(".container");
+function showEventModal(event) {
+  modalApproval.style.display = "flex";
 
-  if (eventContainer) {
-        document.getElementById("modal").style.display = "flex";
-        document.getElementById("modalApproval").style.display = "flex";
+};
+
+eventsContainer.addEventListener("click", (e) => {
+  if (e.target && e.target.id === "approve") {
+    handleApprove(e);
+  }
+  if (e.target && e.target.id === "deny") {
+    handleDeny(e);
   }
 });
+// Approve Event
+function handleApprove(e) {
+  const adminId = '620b24d1-db42-4347-aaa3-029fbc69a5c6';
+  const validated = 'true';
+  const eventId = eventContainer.dataset.eventId;
+
+  // Validate event before approval
+  const validationData = { id: eventId, adminId, validated };
+
+  console.log("Validating Event:", validationData);
+
+  fetch(`${API_BASE_URL}/admin/events/${eventId}/validate`, {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(validationData),
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        alert("Event validated successfully!");
+        fetchAllEvents();  // Refresh event list after approval
+      } else {
+        alert("Failed to validate event.");
+      }
+    })
+    .catch(error => {
+      console.error("Error:", error);
+      alert("An error occurred while validating the event.");
+    });
+}
+
+// Deny Event
+function handleDeny(e) {
+  const eventId = e.target.dataset.eventId;
+  // Logic to handle event denial
+  console.log("Deny Event ID:", eventId);
+}
