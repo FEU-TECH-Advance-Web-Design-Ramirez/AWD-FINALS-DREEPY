@@ -362,7 +362,7 @@ header {
         width: 100%;
         height: 100%;
         background-color: rgb(252, 252, 205);
-        gap: 3rem;
+        gap: 2rem;
         justify-content: center;
         align-items: center;
         padding: 4rem;
@@ -371,58 +371,108 @@ header {
         & .container{
             display: flex;
             flex-direction: column;
-            height: 22rem;
-            width: 20rem;
-            background-color: rgba(128, 128, 128, 0.426);
             align-items: center;
-            cursor: pointer;
-            margin-bottom: 2rem;
+            justify-content: center;
+            height: 60vh;
+            width: 20rem;
+            background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(232,232,232,1) 100%, rgba(235,235,235,1) 100%);
             border-radius: 20px;
-            border: 2px solid white;
-
+            overflow: hidden;
+            box-shadow: 1px 1px 15px;
+            cursor: pointer;
+    
             & > .top{
                 display: flex;
+                height: 40%;
+                width: 100%;
                 justify-content: center;
                 align-items: center;
-                width: 100%;
-                height: 30%;
-                font-size: 4rem;
-                border-bottom: 3px solid black;
+                background: radial-gradient(circle, rgba(255,3,209,1) 0%, rgba(218,0,185,1) 100%, rgba(255,0,251,1) 100%);
+    
+                & > i{
+                    font-size: 4rem;
+                    color: white;
+                }
             }
-
             & > .bottom{
+                display: flex;
+                height: 50%;
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: space-evenly;
+                padding: 10px;
+    
+                & > .button-holder{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 10vh;
+                    gap: 1rem;
+                }
+                & > h1{
+                    font-weight: 800;
+                    font-size: 1.5rem;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2; /* Limit to 3 lines */
+                    height: 4rem;
+                    line-clamp: 2;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    width: 100%;
+                }
+    
+                & > p{
+                    font-family: "Playwrite DE VA", cursive;  
+                }
+                
+                & > p:nth-child(2){
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+    
+                    & > i{
+                        color: rgb(211, 0, 0);
+                    }
+                }
+    
+                & > p:nth-child(3){
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 14px;
+                    color: rgb(72, 72, 72);
+                }
+                
+                & > p:nth-child(4){
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    & > i{
+                        color: rgb(1, 179, 1);
+                    }
+                }
+            }
+            & > .creator{
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                height: 10%;
                 width: 100%;
-                height: 70%;
-                flex-direction: column;
-                
-                & > div{
+                border-top: 2px solid black;
+    
+                & > p{
+                    padding-top: 20px;
+                    gap: 10px;
                     display: flex;
-                    width: 100%;
-                    height: 3rem;
-                    border-bottom: 3px solid black;
-                    flex-direction: row;
-
-                    & > .left {
-                        display: flex;
-                        width: 20%;
-                        font-size: 1rem;
-                        height: 100%;
-                        justify-content: center;
-                        align-items: center;
-                    }
-
-                    & > .right{
-                        display: flex;
-                        font-size: 12px;
-                        align-items: center;
-                        justify-content: flex-start;
-                        width: 80%;
-                        height: 100%;
-                        padding-top: 10px;
-                    }
+                    font-size: 14px;
+                    justify-content: center;
+                    align-items: center;
                 }
             }
         }
@@ -478,6 +528,7 @@ footer{
             cursor: pointer;
             }
         }
+
 
         & > .createEvent-modal {
         display: flex;
@@ -956,6 +1007,8 @@ footer{
     border-color: white !important;
 }
 
+<<<<<<< HEAD
+=======
 @media only screen and (min-width: 375px) and (max-width: 440px) {
 	header {
 		width: 100%;
@@ -1235,3 +1288,4 @@ footer{
         }
     }
 }
+>>>>>>> origin/main
