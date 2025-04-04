@@ -258,7 +258,7 @@ function fetchAllEvents() {
     });
 }
 
-// window.addEventListener("load", fetchAllEvents);
+window.addEventListener("load", fetchAllEvents);
 function fetchAllValidEvents() {
   axios
     .get(`${API_BASE_URL}/events`)
