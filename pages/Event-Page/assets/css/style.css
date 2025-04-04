@@ -175,7 +175,7 @@ body{
 .section1{
     display: flex;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     justify-content: center;
     align-items: center;
     background-image: url(../img/abstract-shape.png);
@@ -185,6 +185,18 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
     gap: 2rem;
+
+    & > .event-holder{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4rem;
+        margin-top: 12vh;
+        padding-bottom: 5rem;
 
     & > .event-container{
         display: flex;
@@ -227,7 +239,7 @@ body{
                 display: -webkit-box;
                 -webkit-box-orient: vertical;
                 -webkit-line-clamp: 2; /* Limit to 3 lines */
-                height: 4rem;
+                height: 3rem;
                 line-clamp: 2;
                 text-overflow: ellipsis;
                 overflow: hidden;
@@ -280,11 +292,12 @@ body{
                 padding-top: 20px;
                 gap: 10px;
                 display: flex;
-                font-size: 14px;
+                font-size: 12px;
                 justify-content: center;
                 align-items: center;
             }
         }
+    }
     }
 }
 
