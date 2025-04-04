@@ -200,3 +200,5 @@ AWD-FINALS-DREEPY
 | Font Awesome | For making a design for my buttons | https://fontawesome.com/ |
 | W3schools | For coding idea | https://www.w3schools.com/css/default.asp |
 | Bootstrap | For design & Functionalities | https://getbootstrap.com/ |
+| SweetAlert | For alert popups and confirmation modals | https://sweetalert2.github.io/ |
+| UIverse | For unique and ready-made UI components | https://uiverse.io/ | 
